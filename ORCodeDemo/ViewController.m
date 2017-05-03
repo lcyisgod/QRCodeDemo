@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    self.navigationController.navigationBar.translucent = NO;
     [self.navigationItem setTitle:@"二维码生成"];
     UIBarButtonItem *bar = [[UIBarButtonItem alloc] initWithTitle:@"扫一扫" style:UIBarButtonItemStyleDone target:self action:@selector(push:)];
     [self.navigationItem setRightBarButtonItem:bar];
@@ -34,7 +35,7 @@
 -(UIImageView *)imageViews
 {
     if (!_imageViews) {
-        self.imageViews = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.center.x - 125, self.view.center.y - 125, 250, 250)];
+        self.imageViews = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.center.x - 125, self.view.center.y-125, 250, 250)];
         UIImage *qrcode = [self createNonInterpolatedUIImageFormCIImage:[self createQRForString:@"BEGIN:VCARD\n FN:黄而慧Kent\nORG:青橙科技\nADR;TYPE=WORK:;;北京朝阳区酒仙桥北路798艺术区706北三街\nTITLE:CEO\nTEL;CELL:18601155940\nTEL;WORK:01052089816\nEMAIL;TYPE=PREF,INTERNET:kent@qingcheng.it\nURL:http://www.qingchengfit.cn\nEND:VCARD"] withSize:250];
         
         UIImage *customQrcode = [self imageBlackToTransparent:qrcode withRed:60 andGreen:74 andBlue:89];

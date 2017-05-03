@@ -8,6 +8,7 @@
 
 #import "SCanVC.h"
 #import <AVFoundation/AVFoundation.h>
+#import "ScanFrame.h"
 #define ScreenHeight [UIScreen mainScreen].bounds.size.height
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 
@@ -29,15 +30,13 @@
     [self createDevice];
 }
 
+
+
 -(void)createDevice
 {
     _device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     _input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:nil];
     _outPut = [[AVCaptureMetadataOutput alloc] init];
-    //设置扫描的实际区域
-    //注意该区域的frmae是一个比例尺,默认为(0,0,1,1)
-    //该比例尺是一个镜像尺度，即(y/heigt,x/width,h/height,w/width)
-    [_outPut setRectOfInterest:CGRectMake((ScreenHeight/2-100)/ScreenHeight, (ScreenWidth/2-100)/ScreenWidth, 200/ScreenWidth, 200/ScreenHeight)];
     [_outPut setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
     
     _session = [[AVCaptureSession alloc] init];
@@ -61,11 +60,15 @@
     self.bgview.layer.borderColor = [UIColor redColor].CGColor;
     self.bgview.layer.borderWidth = 2;
     [self.view addSubview:self.bgview];
-    
+    //设置扫描的实际区域
+    //注意该区域的frmae是一个比例尺,默认为(0,0,1,1)
+    //该比例尺是一个镜像尺度，即(y/heigt,x/width,h/height,w/width)
+    [_outPut setRectOfInterest:[ScanFrame rectFromeX:self.view.center.x-100 andY:self.view.center.y-100 andWidth:200 andHeight:200]];
     _outPut.metadataObjectTypes = @[AVMetadataObjectTypeQRCode];
     [_session startRunning];
 
 }
+
 
 #pragma mark - delegate
 -(void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection

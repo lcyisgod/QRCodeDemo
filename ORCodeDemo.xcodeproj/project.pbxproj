@@ -15,6 +15,7 @@
 		D82E2F911EA59DCF00B5A13D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D82E2F8F1EA59DCF00B5A13D /* LaunchScreen.storyboard */; };
 		D82E2F9C1EA59DCF00B5A13D /* ORCodeDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D82E2F9B1EA59DCF00B5A13D /* ORCodeDemoTests.m */; };
 		D82E2FA71EA59DCF00B5A13D /* ORCodeDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D82E2FA61EA59DCF00B5A13D /* ORCodeDemoUITests.m */; };
+		D86CB39F1EB9A6740046A39E /* ScanFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = D86CB39E1EB9A6740046A39E /* ScanFrame.m */; };
 		D87015171EA60C2D00A69A92 /* libqrencode in Resources */ = {isa = PBXBuildFile; fileRef = D87015151EA60C2D00A69A92 /* libqrencode */; };
 		D87015181EA60C2D00A69A92 /* ZBarSDK in Resources */ = {isa = PBXBuildFile; fileRef = D87015161EA60C2D00A69A92 /* ZBarSDK */; };
 		D870151B1EA60E2500A69A92 /* SCanVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D870151A1EA60E2500A69A92 /* SCanVC.m */; };
@@ -54,6 +55,8 @@
 		D82E2FA21EA59DCF00B5A13D /* ORCodeDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ORCodeDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D82E2FA61EA59DCF00B5A13D /* ORCodeDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORCodeDemoUITests.m; sourceTree = "<group>"; };
 		D82E2FA81EA59DCF00B5A13D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D86CB39D1EB9A6730046A39E /* ScanFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanFrame.h; sourceTree = "<group>"; };
+		D86CB39E1EB9A6740046A39E /* ScanFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanFrame.m; sourceTree = "<group>"; };
 		D87015151EA60C2D00A69A92 /* libqrencode */ = {isa = PBXFileReference; lastKnownFileType = folder; path = libqrencode; sourceTree = "<group>"; };
 		D87015161EA60C2D00A69A92 /* ZBarSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ZBarSDK; sourceTree = "<group>"; };
 		D87015191EA60E2500A69A92 /* SCanVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCanVC.h; sourceTree = "<group>"; };
@@ -116,6 +119,8 @@
 				D82E2F881EA59DCF00B5A13D /* ViewController.m */,
 				D87015191EA60E2500A69A92 /* SCanVC.h */,
 				D870151A1EA60E2500A69A92 /* SCanVC.m */,
+				D86CB39D1EB9A6730046A39E /* ScanFrame.h */,
+				D86CB39E1EB9A6740046A39E /* ScanFrame.m */,
 				D82E2F8A1EA59DCF00B5A13D /* Main.storyboard */,
 				D82E2F8D1EA59DCF00B5A13D /* Assets.xcassets */,
 				D82E2F8F1EA59DCF00B5A13D /* LaunchScreen.storyboard */,
@@ -289,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D86CB39F1EB9A6740046A39E /* ScanFrame.m in Sources */,
 				D82E2F891EA59DCF00B5A13D /* ViewController.m in Sources */,
 				D870151B1EA60E2500A69A92 /* SCanVC.m in Sources */,
 				D82E2F861EA59DCF00B5A13D /* AppDelegate.m in Sources */,

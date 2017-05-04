@@ -12,7 +12,6 @@
 
 @interface ViewController ()
 @property (nonatomic, strong) UIImageView *imageViews;
-@property (nonatomic, strong) UIImageView *coverImg;
 @end
 
 @implementation ViewController
@@ -48,21 +47,6 @@
     }
     return _imageViews;
 }
-
--(UIImageView *)coverImg
-{
-    if (!_coverImg) {
-        self.coverImg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"test"]];
-        float w = 80;
-        float h = 80;
-        float x = (self.imageViews.frame.size.width-w)/2;
-        float y = (self.imageViews.frame.size.height-h)/2;
-        self.coverImg.frame = CGRectMake(x, y, w, h);
-    }
-    return _coverImg;
-}
-
-
 
 #pragma mark - InterpolatedUIImage
 //调整生成的二维码图片大小和位置
